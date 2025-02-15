@@ -1,6 +1,10 @@
 Super Infrastructure Project
-Project Description: This project integrates foundational infrastructure and best coding practices I have previously implemented. 
-Applying these technology stacks within this infrastructure in realworld projects enhances development efficiency.
+
+Project Description: 
+
+This project integrates foundational infrastructure and best coding practices I have previously implemented. 
+Applying these technology stacks within this infrastructure in real-world projects enhances development efficiency.
+
 Infrastucture:
 - Microservices Architecture
 - API Gateways
