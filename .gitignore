@@ -1,3 +1,71 @@
+# .NET build output
 bin/
 obj/
+**/bin/
+**/obj/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider / JetBrains / VS Code / VS
+.idea/
 .vs/
+.vscode/
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+.pnpm-debug.log*
+
+# Testing / coverage
+coverage/
+e2e/output/
+*.spec.ts.snap
+
+# Logs
+*.log
+
+# OS generated
+.DS_Store
+Thumbs.db
+
+# Configuration secrets (if any are added later)
+*.env
+.env.*.local
+
+# Build directories
+build/
+dist/
+
+# CI / Linting
+*.tsbuildinfo
+*.eslintcache
+
+# Temporary files
+*.tmp
+*.temp
+
+# Dotnet tool manifests
+.dotnet/
+
+# Global config/cache
+.config/
+.configurations/
+.devcenter/
+
+# Ignore images (optional, if not source assets)
+img/
+
+# Ignore backup files
+*~
+*.bak
+*.old
+
+# Ignore by convention folders
+global/
