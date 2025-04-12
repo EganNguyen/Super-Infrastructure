@@ -1,14 +1,9 @@
-﻿using Basket.API;
-using Microsoft.EntityFrameworkCore;
-
-var builder = WebApplication.CreateBuilder(args);
+﻿var builder = WebApplication.CreateBuilder(args);
 
 builder.AddBasicServiceDefaults();
 builder.AddApplicationServices();
 
 builder.Services.AddGrpc();
-builder.Services.AddDbContext<BasketDbContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("PostgreSQL")));
 
 var app = builder.Build();
 

@@ -46,7 +46,7 @@ public class BasketService(
             logger.LogDebug("Begin UpdateBasket call from method {Method} for basket id {Id}", context.Method, userId);
         }
 
-        var customerBasket = MapToCustomerBasket(Convert.ToInt32(userId), request);
+        var customerBasket = MapToCustomerBasket(userId, request);
         var response = await repository.UpdateBasketAsync(customerBasket);
         if (response is null)
         {
@@ -90,11 +90,11 @@ public class BasketService(
         return response;
     }
 
-    private static CustomerBasket MapToCustomerBasket(int userId, UpdateBasketRequest customerBasketRequest)
+    private static CustomerBasket MapToCustomerBasket(string userId, UpdateBasketRequest customerBasketRequest)
     {
         var response = new CustomerBasket
         {
-            Id = userId
+            BuyerId = userId
         };
 
         foreach (var item in customerBasketRequest.Items)

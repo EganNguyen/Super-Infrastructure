@@ -34,7 +34,7 @@ public class RedisBasketRepository(ILogger<RedisBasketRepository> logger, IConne
     public async Task<CustomerBasket> UpdateBasketAsync(CustomerBasket basket)
     {
         var json = JsonSerializer.SerializeToUtf8Bytes(basket, BasketSerializationContext.Default.CustomerBasket);
-        var created = await _database.StringSetAsync(GetBasketKey(basket.Id.ToString()), json);
+        var created = await _database.StringSetAsync(GetBasketKey(basket.BuyerId), json);
 
         if (!created)
         {
@@ -44,7 +44,7 @@ public class RedisBasketRepository(ILogger<RedisBasketRepository> logger, IConne
 
 
         logger.LogInformation("Basket item persisted successfully.");
-        return await GetBasketAsync(basket.Id.ToString());
+        return await GetBasketAsync(basket.BuyerId);
     }
 }
 
